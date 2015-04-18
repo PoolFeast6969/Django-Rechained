@@ -4,10 +4,10 @@ admin.AdminSite.site_title = 'Django Rechained'
 admin.AdminSite.index_title = 'Wow your cool'
 
 
-from .models import Card
+from .models import *
 class CardAdmin(admin.ModelAdmin):
-    list_display = ('content', 'type', 'author', 'date_created')
-    list_filter = ['type']
+    list_display = ('content', 'author', 'date_created')
 
 
-admin.site.register(Card, CardAdmin)
+admin.site.register(Answer, CardAdmin)
+admin.site.register(Question, CardAdmin)
