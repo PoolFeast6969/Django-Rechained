@@ -11,3 +11,11 @@ class CardAdmin(admin.ModelAdmin):
 
 admin.site.register(Answer, CardAdmin)
 admin.site.register(Question, CardAdmin)
+
+from django.contrib.auth.admin import UserAdmin
+from .models import User
+
+class UserAdmin(UserAdmin):
+    list_display = ('email', 'email_valid')
+
+admin.site.register(User, UserAdmin)
