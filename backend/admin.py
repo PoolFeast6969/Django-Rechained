@@ -16,6 +16,7 @@ from django.contrib.auth.admin import UserAdmin
 from .models import User
 
 class UserAdmin(UserAdmin):
-    list_display = ('email', 'email_valid')
+    list_display = UserAdmin.list_display + ('email_valid',)
+    fieldsets = None
 
 admin.site.register(User, UserAdmin)
