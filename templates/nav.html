@@ -1,0 +1,40 @@
+
+<div class="dummynav"></div>
+<nav>
+    <button class="button" tabindex="0" onclick="window.location = '/'">Home</button>
+    <button class="button" tabindex="0" onclick="window.location = '/cards'">Questions</button>
+    <button class="button" tabindex="0" onclick="window.location = '/cards/create'">Ask</button>
+    <button class="button" tabindex="0" onclick="window.location = '/about'">About</button>
+    <?php if(isset($_SESSION['user'])) {?>
+        <div class="logout">
+            <div>
+                <?php echo $_SESSION['user']['username']; ?>
+            </div>
+            <div>
+                <a class="link hey" href="/account">Account</a>
+                <a class="link hey" href="/account/logout">Logout</a>
+            </div>
+        </div>
+    <?php } else { ?>
+        <form method="POST" action="/account/login" class="login">
+            <div>
+                <span>Login</span>
+                <a class="link" href="/account/create">SignUp</a>
+            </div>
+            <input type="submit" class="invis">
+            <div>
+                <input class="tiny" placeholder="Username" type="text" name="username">
+                <input class="tiny" placeholder="Password" type="password" name="password">
+            </div>
+        </form>
+    <?php } ?>
+    <script>
+        $(window).scroll(function () {
+            if ($(this).scrollTop() >= $('header.title').height()) {
+                $('nav').addClass("scroll");
+            } else {
+                $('nav').removeClass("scroll");
+            }
+        });
+    </script>
+</nav>
