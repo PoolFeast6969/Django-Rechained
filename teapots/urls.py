@@ -4,5 +4,5 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^$', include('backend.urls')),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', include('django_socketio.urls')),
+    url("", include('django_socketio.urls')),
 ]

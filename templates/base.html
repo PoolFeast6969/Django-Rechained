@@ -1,25 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>{{ title|default:"teapots" }}</title>
     {% load socketio_tags %}
+    {% socketio %}
+    <script>
+        var socket = new io.Socket();
+        socket.connect('localhost');
+    </script>
     {% load staticfiles %}
-    {% block scripts %}
-        <link rel="stylesheet" href="{% static "the.css" %}" />
-        <script src="{% static "jquery-1.11.1.min.js" %}"></script>
-        {% socketio %}
-        <script>
-            var socket = new io.Socket();
-            socket.connect();
-        </script>
-    {% endblock %}
+    <link rel="stylesheet" href="{% static "the.css" %}" />
+    <script src="{% static "jquery-1.11.1.min.js" %}"></script>
+    <title>{{ title|default:"teapots" }}</title>
 </head>
 <body>
-    {% if nav %}
+    {% block nav %}
         {% include "nav.html" %}
-    {% endif %}
+    {% endblock %}
     {% block content %}
-        { lorum 10 random }
     {% endblock %}
 </body>
 </html>
