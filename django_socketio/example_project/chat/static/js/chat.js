@@ -100,8 +100,8 @@ $(function() {
     };
 
     var start = function() {
-        var socketNamespace = io.connect('/chat', {"host": "127.0.0.1", "port": 9000});
-        socket = socketNamespace.socket;
+        socket = new io.Socket();
+        socket.connect();
         socket.on('connect', connected);
         socket.on('disconnect', disconnected);
         socket.on('message', messaged);
