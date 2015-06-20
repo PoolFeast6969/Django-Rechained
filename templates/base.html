@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% load socketio_tags %}
-    {% socketio %}
-    <script>
-        var socket = new io.Socket();
-        socket.connect('localhost');
-    </script>
     {% load staticfiles %}
     <link rel="stylesheet" href="{% static "the.css" %}" />
     <script src="{% static "jquery-1.11.1.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "omnibus.min.js" %}"></script>
+    <script>
+        var transport = WebSocket;
+        var endpoint = '{{ OMNIBUS_ENDPOINT }}';
+        var options = {
+            authToken: '{{ OMNIBUS_AUTH_TOKEN }}'
+        };
+        var connection = new Omnibus(transport, endpoint, options);
+        var channel = connection.openChannel('ping-channel');
+        channel.send('ping-event', {
+            message: 'hello world'
+        });
+    </script>
     <title>{{ title|default:"teapots" }}</title>
 </head>
 <body>

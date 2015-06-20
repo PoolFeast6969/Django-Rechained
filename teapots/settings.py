@@ -38,7 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'backend',
-    'django_socketio',
+    'omnibus',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -65,6 +65,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'omnibus.context_processors.omnibus',
             ],
         },
     },
@@ -107,5 +108,3 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = os.path.join(BASE_DIR, "static"),
 
 AUTH_USER_MODEL = 'backend.User'
-
-USE_THOUSAND_SEPARATOR = True
