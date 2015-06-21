@@ -1,0 +1,29 @@
+<div class="card" tabindex="0">
+    <div class="cardwrapper">
+        <div class="front {{card.front.color}}">
+            <div class="dummycard"></div>
+            <div class="internal">
+                <div class="contentpanel">{{card.front.content}}</div>
+                <div class="cardpanel">
+                    <span class="author">{{card.front.author}}</span>
+                </div>
+            </div>
+        </div>
+        <a href="{{card.page}}">
+            <div id="{{card.id}}"class="back {{card.back.color}}">
+                <div class="dummycard"></div>
+                <div class="internal">
+                    <div class="contentpanel">{{card.back.content}}</div>
+                    <div class="cardpanel">
+                        <span class="author">{{card.back.author}}</span>
+                        <div class="votepanel" tabindex="0">
+                            <a type="button" class="up arrow" onclick="vote('up','{{card.id}}')"></a>
+                            <span>{{card.score}}</span>
+                            <a type="button" class="down arrow" onclick="vote('down')"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>

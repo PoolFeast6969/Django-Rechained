@@ -4,6 +4,7 @@
     {% load staticfiles %}
     <link rel="stylesheet" href="{% static "the.css" %}" />
     <script src="{% static "jquery-1.11.1.min.js" %}"></script>
+    <script src="{% static "vote.js" %}"></script>
     <script type="text/javascript" src="{% static "omnibus.min.js" %}"></script>
     <script>
         var transport = WebSocket;
@@ -11,8 +12,8 @@
         var options = {
             authToken: '{{ OMNIBUS_AUTH_TOKEN }}'
         };
-        var connection = new Omnibus(transport, endpoint, options);
-        var channel = connection.openChannel('ping-channel');
+        window.connection = new Omnibus(transport, endpoint, options);
+        window.channel = connection.openChannel('ping-channel');
         connection
 			.on(Omnibus.events.CONNECTION_CONNECTED, function(event)
             {
