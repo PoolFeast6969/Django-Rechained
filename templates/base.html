@@ -16,7 +16,19 @@
         channel.send('ping-event', {
             message: 'hello world'
         });
-    </script>
+        connection
+			.on(Omnibus.events.CONNECTION_CONNECTED, function(event)
+            {
+				console.log('Connection Established');
+			})
+			.on(Omnibus.events.CONNECTION_AUTHENTICATED, function(event) {
+				console.log('Connection Authenticated');
+			});
+        channel
+			.on(Omnibus.events.CHANNEL_SUBSCRIBED, function(event) {
+				console.log('Channel Subscribed');
+			})
+</script>
     <title>{{ title|default:"teapots" }}</title>
 </head>
 <body>
