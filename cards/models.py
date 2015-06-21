@@ -1,5 +1,4 @@
 from django.db import models
-from django.contrib.auth.models import *
 from django.conf import settings
 
 class Card(models.Model):
@@ -18,6 +17,3 @@ class Question(Card):
 class Answer(Card):
 	owner = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='owner')
 	content = models.CharField(max_length=50)
-
-class User(AbstractUser):
-    email_valid = models.BooleanField('email verified', default=False)

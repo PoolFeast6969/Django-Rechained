@@ -37,8 +37,9 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'backend',
     'omnibus',
+    'users',
+    'cards',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -107,7 +108,7 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = os.path.join(BASE_DIR, "static"),
 
-AUTH_USER_MODEL = 'backend.User'
+AUTH_USER_MODEL = 'users.User'
 
 LOGGING = {
     'version': 1,
