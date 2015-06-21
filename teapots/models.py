@@ -17,3 +17,8 @@ class Question(Card):
 class Answer(Card):
 	owner = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='owner')
 	content = models.CharField(max_length=50)
+
+from django.contrib.auth.models import AbstractUser
+
+class User(AbstractUser):
+    email_valid = models.BooleanField('email verified', default=False)
