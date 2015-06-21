@@ -13,9 +13,6 @@
         };
         var connection = new Omnibus(transport, endpoint, options);
         var channel = connection.openChannel('ping-channel');
-        channel.send('ping-event', {
-            message: 'hello world'
-        });
         connection
 			.on(Omnibus.events.CONNECTION_CONNECTED, function(event)
             {
@@ -27,6 +24,9 @@
         channel
 			.on(Omnibus.events.CHANNEL_SUBSCRIBED, function(event) {
 				console.log('Channel Subscribed');
+                channel.send('ping-event', {
+                    message: 'hello world'
+                });
 			})
 </script>
     <title>{{ title|default:"teapots" }}</title>

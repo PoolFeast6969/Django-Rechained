@@ -108,3 +108,32 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = os.path.join(BASE_DIR, "static"),
 
 AUTH_USER_MODEL = 'backend.User'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': True,
+    'formatters': {
+        'simple': {'format': '%(levelname)s %(asctime)s %(name)s %(message)s'},
+        'short': {'format': '%(levelname)s %(asctime)s %(message)s'},
+        'verbose': {'format': '%(levelname)s %(asctime)s %(name)s %(message)s\n%(request)s'},
+    },
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse'
+        }
+    },
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'short',
+        },
+    },
+    'loggers': {
+        'omnibus': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+    }
+}
