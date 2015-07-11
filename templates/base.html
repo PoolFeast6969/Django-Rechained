@@ -5,31 +5,6 @@
     <link rel="stylesheet" href="{% static "the.css" %}" />
     <script src="{% static "jquery-1.11.1.min.js" %}"></script>
     <script src="{% static "vote.js" %}"></script>
-    <script type="text/javascript" src="{% static "omnibus.min.js" %}"></script>
-    <script>
-        var transport = WebSocket;
-        var endpoint = '{{ OMNIBUS_ENDPOINT }}';
-        var options = {
-            authToken: '{{ OMNIBUS_AUTH_TOKEN }}'
-        };
-        window.connection = new Omnibus(transport, endpoint, options);
-        window.channel = connection.openChannel('ping-channel');
-        connection
-			.on(Omnibus.events.CONNECTION_CONNECTED, function(event)
-            {
-				console.log('Connection Established');
-			})
-			.on(Omnibus.events.CONNECTION_AUTHENTICATED, function(event) {
-				console.log('Connection Authenticated');
-			});
-        channel
-			.on(Omnibus.events.CHANNEL_SUBSCRIBED, function(event) {
-				console.log('Channel Subscribed');
-                channel.send('ping-event', {
-                    message: 'hello world'
-                });
-			})
-</script>
     <title>{{ title|default:"teapots" }}</title>
 </head>
 <body>

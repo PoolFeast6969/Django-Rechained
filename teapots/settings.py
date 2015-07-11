@@ -29,7 +29,6 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'omnibus',
     'teapots',
 )
 
@@ -57,7 +56,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'omnibus.context_processors.omnibus',
             ],
         },
     },
@@ -90,7 +88,7 @@ AUTH_USER_MODEL = 'teapots.User'
 
 LOGGING = {
     'version': 1,
-    'disable_existing_loggers': True,
+    'disable_existing_loggers': False,
     'formatters': {
         'simple': {'format': '%(levelname)s %(asctime)s %(name)s %(message)s'},
         'short': {'format': '%(levelname)s %(asctime)s %(message)s'},
@@ -108,11 +106,4 @@ LOGGING = {
             'formatter': 'short',
         },
     },
-    'loggers': {
-        'omnibus': {
-            'handlers': ['console'],
-            'level': 'DEBUG',
-            'propagate': False,
-        },
-    }
 }
