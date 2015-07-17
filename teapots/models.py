@@ -6,7 +6,7 @@ class Card(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL)
     date_created = models.DateTimeField('date created', auto_now_add=True)
     uses = models.IntegerField(default=0)
-    votes = models.IntegerField(default=0)
+    score = models.IntegerField(default=0)
 
     def __str__(self):
         return self.content

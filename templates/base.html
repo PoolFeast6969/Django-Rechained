@@ -8,9 +8,7 @@
     <title>{{ title|default:"teapots" }}</title>
 </head>
 <body>
-    {% block nav %}
-        {% include "nav.html" %}
-    {% endblock %}
+    {% include "nav.html" %}
     {% block content %}
     {% endblock %}
 </body>
