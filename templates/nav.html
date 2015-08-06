@@ -19,7 +19,7 @@
         <form method="POST" action="." class="login">
             <div>
                 <span>Login</span>
-                <a class="link" href="/account/create">SignUp</a>
+                <a class="link" href="{% url 'django.contrib.auth.views.login' %}?next={{ request.get_full_path }}">SignUp</a>
             </div>
             {% csrf_token %}
             <input type="submit" class="invis">
