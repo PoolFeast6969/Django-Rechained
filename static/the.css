@@ -40,12 +40,9 @@ header span {
     margin-left: auto;
 }
 header.title {
-    font-size: 800%;
+    font-size: 600%;
     white-space: nowrap;
-}
-header.title i {
     font-family: 'Dancing Script', cursive;
-    font-size: 90%;
 }
 .dummynav, nav {
     height: 80px;

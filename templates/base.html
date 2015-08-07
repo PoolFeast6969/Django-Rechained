@@ -8,8 +8,8 @@
     <title>{{ title|default:"teapots" }}</title>
 </head>
 <body>
-    {% include "nav.html" %}
-    {% block content %}
+    {% block body %}
     {% endblock %}
+    {% include 'footer.html' %}
 </body>
 </html>

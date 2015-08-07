@@ -86,6 +86,8 @@ STATICFILES_DIRS = os.path.join(BASE_DIR, "static"),
 
 AUTH_USER_MODEL = 'teapots.User'
 
+LOGIN_REDIRECT_URL = '/'
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,

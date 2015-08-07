@@ -1,0 +1,36 @@
+<header class="fontscaling title">
+	<span>{{ headertitle|default:"Django - Rechained" }}</span>
+</header>
+<div class="dummynav"></div>
+<nav>
+    <button class="button" tabindex="0" onclick="window.location = '{% url 'index' %}'">Home</button>
+    <button class="button" tabindex="0" onclick="window.location = '{% url 'index' %}'">Questions</button>
+    <button class="button" tabindex="0" onclick="window.location = '{% url 'index' %}'">Ask</button>
+    <button class="button" tabindex="0" onclick="window.location = '{% url 'index' %}'">About</button>
+    {% if user.is_authenticated %}
+    <div class="logout">
+        <div> {{ user.username }} </div>
+        <div> <a class="link hey" href="{% url 'index' %}">Account</a> <a class="link hey" href="{% url 'logout' %}">Logout</a> </div>
+    </div>
+    {% else %}
+    <form method="post" action="{% url 'login' %}?next={{ request.get_full_path }}" class="login">
+        <div> <span>Login</span> <a class="link" href="{% url 'index' %}">SignUp</a> </div>
+        <div>
+            <input class="tiny" placeholder="Username" type="text" name="username">
+            <input class="tiny" placeholder="Password" type="password" name="password">
+        </div>
+        {% csrf_token %}
+        <input type="submit" class="invis">
+    </form>
+    {% endif %}
+    <script>
+        $(window).scroll(function() {
+            if ($(this).scrollTop() >= $('header.title').height()) {
+                $('nav').addClass("scroll");
+            } else {
+                $('nav').removeClass("scroll");
+            }
+        });
+
+    </script>
+</nav>
