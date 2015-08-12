@@ -4,7 +4,7 @@
 {% include 'header.html' %}
 {% if messages %}
 {% for message in messages %}
-<div{% if message.tags %} class="message {{ message.tags }}"{% endif %}>
+<div{% if message.tags %} class="goodbox {{ message.tags }}"{% endif %}>
     {{ message }}
 </div>
 {% endfor %}

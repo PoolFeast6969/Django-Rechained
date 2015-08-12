@@ -88,6 +88,8 @@ AUTH_USER_MODEL = 'teapots.User'
 
 LOGIN_REDIRECT_URL = '/'
 
+DEFAULT_FROM_EMAIL = 'wow you can set who the email is from'
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
