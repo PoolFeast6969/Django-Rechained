@@ -223,19 +223,16 @@ input.tiny {
     height: 2em;
     padding: 5px 5px;
 }
-.badbox, .goodbox {
+.message {
     margin: 20px auto;
     padding: 8px;
     border: 2px solid #222;
     border-radius: 6px;
 }
-.badbox > *, .goodbox > * {
-    list-style: square;
-}
-.badbox {
+.message.error {
     background-color: #dd3c3c;
 }
-.goodbox {
+.message.info {
     background-color: #3ec433;
 }
 .card {
