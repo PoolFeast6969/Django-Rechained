@@ -10,7 +10,7 @@
     {% if user.is_authenticated %}
     <div class="logout">
         <div> {{ user.username }} </div>
-        <div> <a class="link hey" href="{% url 'index' %}">Account</a> <a class="link hey" href="{% url 'logout' %}">Logout</a> </div>
+        <div> <a class="link hey" href="{% url 'index' %}">Account</a> <a class="link hey" href="{% url 'logout' %}?next={{ request.get_full_path }}">Logout</a> </div>
     </div>
     {% else %}
     <form method="post" action="{% url 'login' %}?next={{ request.get_full_path }}" class="login">
