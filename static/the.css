@@ -1,98 +1,127 @@
 html {
-    font-family: 'Open Sans', sans-serif;
-    overflow-x: hidden;
     background: #222;
+
+    font-family: 'Open Sans', sans-serif;
+
     -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
 }
 body {
     position: absolute;
     right: 0;
     left: 0;
+
     max-width: 60em;
     min-height: calc(100% - 50px);
     margin: 0 auto;
+
     color: white;
 }
 footer {
-    font-family: 'Roboto', sans-serif;
     position: absolute;
     z-index: -1;
     right: 0;
     bottom: -50px;
     left: 0;
-    margin: 0 auto;
+
     padding: 5px;
+
     -webkit-animation: fadeIn 1s ease-out forwards;
     text-align: center;
+
     color: #444;
     text-shadow: .5px .5px #999, -.5px -.5px black;
+
+    font-family: 'Roboto', sans-serif;
 }
 header, nav {
     position: relative;
     left: calc(-50vw + 50%);
+
     display: flex;
+
     width: 100vw;
+
     -webkit-animation: slideTop 1s ease-out forwards;
+
     background: #03a9f4;
 }
 header span {
-    margin-right: auto;
-    margin-left: auto;
+    width: 100%;
+    text-align: center;
 }
 header.title {
-    font-size: 600%;
     white-space: nowrap;
+
     font-family: 'Dancing Script', cursive;
+    font-size: 600%;
 }
 .dummynav, nav {
     height: 80px;
 }
 nav {
+    white-space: nowrap;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+
     margin-top: -80px;
+
     -webkit-transition: background .5s;
+
     justify-content: center;
-    overflow-x: auto;
 }
 nav.scroll {
     position: fixed;
     z-index: 2;
     top: 0;
+
     margin: 0 auto;
+
     background: rgba(3, 169, 244, .8);
 }
 .login, .logout {
-    font-family: 'Roboto', sans-serif;
-    font-size: 90%;
     display: inline-flex;
     flex-direction: column;
-    justify-content: space-around;
-    align-items: stretch;
+
     margin: 3px;
     padding: 3px;
+
     border: 3px solid white;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 90%;
+
+    justify-content: space-around;
+    align-items: stretch;
 }
 .logout {
-    justify-content: center;
     text-align: center;
+
+    justify-content: center;
 }
 .login div:last-child {
     display: flex;
     flex-direction: column;
+
     justify-content: space-around;
     align-items: stretch;
 }
 .login div:first-child {
     display: flex;
-    justify-content: space-between;
+
     margin-bottom: 5px;
+
+    justify-content: space-between;
 }
 .button {
-    font-size: large;
     margin: 3px;
+
     color: inherit;
     border: white solid;
     background: transparent;
-    cursor: pointer;
+
+    font-size: 120%;
 }
 .button:hover {
     border-radius: 43%;
@@ -102,8 +131,11 @@ nav.scroll {
 }
 a {
     text-decoration: none;
+
     color: inherit;
+
     font-family: 'Roboto', sans-serif;
+
     -webkit-tap-highlight-color: none;
 }
 .link {
@@ -115,17 +147,20 @@ a {
     -webkit-transform: scale(.8, .8);
 }
 .embedbutton {
-    font-size: 110%;
     margin: 5px;
     padding: 10px;
+
     -webkit-transition: 0s 9999s;
     -webkit-animation: fadeIn 1s ease-out forwards;
     text-align: center;
+
     color: inherit;
     border: none;
     border-radius: 3px;
     background: transparent;
     box-shadow: 0 0 5px 0px black, inset 0 0 8px 4px rgba(255, 255, 255, .03);
+
+    font-size: 110%;
 }
 .embedbutton.current, .embedbutton:focus {
     background: rgba(0, 0, 0, .2);
@@ -133,30 +168,18 @@ a {
 }
 .embedbutton span {
     display: inline-block;
+
     -webkit-transition: 0s 9999s;
 }
 .embedbutton.current span, .embedbutton:focus span {
     -webkit-transform: scale(.85);
 }
-.paginator {
-    padding: 15px;
-    text-align: center;
-}
-.sortselector > .embedbutton {
-    flex: 10 1 auto;
-}
-.sortselector {
-    display: flex;
-    padding: 15px 0 5px 0;
-    align-items: stretch;
-}
-.title {
-    -webkit-transition: font-size .5s;
-}
 .content {
     overflow: hidden;
+
     margin: 10px;
     padding: 8px;
+
     border-radius: 10px;
     background: #6e6e6e;
     box-shadow: 0 0 15px 0 #000;
@@ -168,22 +191,27 @@ a {
     -webkit-animation: slideLeft 1s ease-out forwards;
 }
 .content .title, .content .subtitle {
+    padding: 6px;
+
+    background: rgba(0, 0, 0, .1);
+
     font-family: 'Roboto', sans-serif;
     font-weight: 100;
-    padding: 6px;
-    background: rgba(0, 0, 0, .1);
 }
 .content .title {
-    font-size: 35pt;
     margin: -8px -8px 0 -8px;
+
+    font-size: 35pt;
 }
 .content .subtitle {
-    font-size: 25pt;
     margin: 7px -8px;
+
+    font-size: 25pt;
 }
 input[type='text'], input[type='password'], input[type='email'] {
     margin: 1px;
     padding: 10px;
+
     border: none;
     border-radius: 30px;
     box-shadow: 0 0 25px rgba(0, 0, 0, .2) inset;
@@ -198,20 +226,28 @@ input.tiny {
     box-shadow: none;
 }
 .small {
-    height: 0;
     overflow: hidden;
-    font-size: 80%;
-    background: rgba(0, 0, 0, 0.1);
-    flex: 0 1 100%;
+
+    height: 0;
     padding: 0 5px
+
+    background: rgba(0, 0, 0, 0.1);
+
+    font-size: 80%;
+
+    flex: 0 1 100%;
 }
 .row {
     position: relative;
+
     display: flex;
-    flex-wrap: wrap;
+
     margin: 7px 4px;
+
     border: 2px solid white;
     background: #00bcd4;
+
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     align-content: flex-end;
@@ -226,6 +262,7 @@ input.tiny {
 .message {
     margin: 20px auto;
     padding: 8px;
+
     border: 2px solid #222;
     border-radius: 6px;
 }
@@ -237,9 +274,12 @@ input.tiny {
 }
 .card {
     position: relative;
+
     display: inline-block;
+
     width: calc(20% - 20px);
     margin: 8px;
+
     -webkit-perspective: 750px;
 }
 .front, .back, .onesided {
@@ -247,34 +287,43 @@ input.tiny {
     border-radius: 15px;
     background: #6e6e6e;
     box-shadow: 0 0 15px 0 #000;
+
     -webkit-backface-visibility: hidden;
 }
 .front {
     position: relative;
+
     margin-bottom: calc(-150% + 5px);
+
     -webkit-transform: rotateY(0deg);
 }
 .back {
     z-index: -1;
+
     -webkit-transform: rotateY(180deg);
 }
 .dummycard {
     padding-top: 150%;
 }
 .internal {
-    font-size: large;
-    font-weight: normal;
     position: absolute;
     top: 10px;
     right: 10px;
     bottom: 10px;
     left: 10px;
+
     display: flex;
     flex-direction: column;
+
     -webkit-transition: font-size .2s;
     word-wrap: break-word;
     pointer-events: none;
+
     color: white;
+
+    font-size: large;
+    font-weight: normal;
+
     justify-content: space-between;
     align-items: stretch;
 }
@@ -286,8 +335,10 @@ input.tiny {
 }
 .cardpanel {
     display: flex;
+
     margin: 0;
     padding: 0;
+
     justify-content: space-between;
     align-items: flex-end;
 }
@@ -299,10 +350,12 @@ input.tiny {
 }
 .arrow {
     display: block;
+
     width: 0;
     height: 0;
     margin: 0;
     padding: 0;
+
     border-style: solid;
     background-clip: padding;
 }
@@ -324,6 +377,7 @@ input.tiny {
 }
 .cardwrapper {
     position: relative;
+
     -webkit-transform-style: preserve-3d;
 }
 .card:focus .cardwrapper {
@@ -355,13 +409,15 @@ input.tiny {
     background: #673ab7;
 }
 .banner {
+    text-align: center;
+    white-space: nowrap;
+
+    border: none;
+    border-radius: 10px;
+
     font-family: 'Roboto', sans-serif;
     font-size: 250%;
     font-weight: 100;
-    text-align: center;
-    border: none;
-    border-radius: 10px;
-    white-space: nowrap;
 }
 .banner.blue {
     background: -webkit-linear-gradient(#9c27b0, #3f51b5);
@@ -373,63 +429,44 @@ input.tiny {
     background: -webkit-linear-gradient(#ffeb3b, #0a7e07);
 }
 .notice {
-    font-family: 'Roboto', sans-serif;
-    font-size: xx-large;
     display: block;
+
     margin-top: calc(30vh - .6em);
+
     text-align: center;
+
     color: #777;
     text-shadow: 1px 1px #999, -1px -1px black;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: xx-large;
 }
 .notice .title {
     font-size: 40pt;
 }
-.notice.httperror::first-line {
-    font-size: 600%;
-    font-style: italic;
-}
-.notice.httperror p {
-    font-size: 60%;
-}
-.aspectpreserver {
-    position: relative;
-    width: calc(100% - 20px);
-    height: 0;
-    padding-bottom: 59%;
-}
-.aspectpreserver > * {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-@media only screen and (max-width: 750px), only screen and (max-device-width: 750px) {
+@media only screen and (max-width: 800px) {
     .fontscaling {
-        font-size: 15vw;
+        font-size: 10vw !important;
     }
-    header.fontscaling.title {
-        font-size: 15vw;
-    }
-    .banner.fontscaling {
-        font-size: 6vw !important;
-    }
+}
+@media only screen and (max-width: 750px) {
     .card {
         width: calc(25% - 20px);
     }
 }
-@media only screen and (max-width: 650px), only screen and (max-device-width: 650px) {
+@media only screen and (max-width: 650px) {
     .card {
         width: calc(33.33333333333333333% - 20px);
     }
 }
-@media only screen and (max-width: 550px), only screen and (max-device-width: 550px) {
+@media only screen and (max-width: 550px) {
     .card {
         width: calc(50% - 20px);
     }
     nav > .button {
-        font-size: 4vw;
         padding: 1px 3px 2px;
+
+        font-size: 4vw;
     }
     nav > * {
         flex: 2 0 auto;
@@ -441,6 +478,7 @@ input.tiny {
     }
     .cardwrapper:hover .front {
         z-index: 1;
+
         box-shadow: 10px 10px 50px #000;
     }
 }
@@ -520,6 +558,7 @@ input.tiny {
 }
 .rainbow {
     -webkit-animation: animatedBackground 3s linear infinite;
+
     background: -webkit-gradient(linear, left top, right top, color-stop(0, #f22), color-stop(.15, #f2f), color-stop(.3, #22f), color-stop(.45, #2ff), color-stop(.6, #2f2), color-stop(.75, #2f2), color-stop(.9, #ff2), color-stop(1, #f22));
     background-size: 20%;
 }
@@ -532,6 +571,6 @@ input.tiny {
 .i {
     font-style: italic;
 }
-.link, .button, .content, .card, .front, .back, .onesided, .arrow, .cardwrapper, .embedbutton span, .embedbutton, .content input[type='text'], .content input[type='password'], .content input[type='email'], .small {
+.link, .title > span, .button, .content, .card, .front, .back, .onesided, .arrow, .cardwrapper, .embedbutton span, .embedbutton, .content input[type='text'], .content input[type='password'], .content input[type='email'], .small {
     -webkit-transition: .5s;
 }
