@@ -1,4 +1,4 @@
-<div class="card" tabindex="0">
+<div id="card-{{card.id}}" class="card" tabindex="0">
     <div class="cardwrapper">
         <div class="front {{card.front.color}}">
             <div class="dummycard"></div>
@@ -10,7 +10,7 @@
             </div>
         </div>
         <a href="{{card.page}}">
-            <div id="{{card.id}}"class="back {{card.back.color}}">
+            <div class="back {{card.back.color}}">
                 <div class="dummycard"></div>
                 <div class="internal">
                     <div class="contentpanel">{{card.back.content}}</div>
