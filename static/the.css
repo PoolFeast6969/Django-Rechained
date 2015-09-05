@@ -84,7 +84,7 @@ nav.scroll {
 
     background: rgba(3, 169, 244, .8);
 }
-.login, .logout {
+.login {
     display: flex;
     flex-direction: column;
 
@@ -96,12 +96,9 @@ nav.scroll {
     font-family: 'Roboto', sans-serif;
     font-size: 90%;
 }
-.logout {
-    text-align: center;
-}
 .login > .first.container {
     display: flex;
-
+    min-width: 100px;
     justify-content: space-between;
 }
 .login > .second.container {
@@ -114,6 +111,7 @@ nav.scroll {
     align-items: stretch;
     align-content: center;
     flex-grow: 1;
+    text-align: center;
 }
 .login > .second.container > * {
     flex: 1 1 auto;

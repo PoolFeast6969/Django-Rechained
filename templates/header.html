@@ -9,9 +9,14 @@
 	    <button class="button" tabindex="0" onclick="window.location = '{% url 'index' %}'">Ask</button>
 	    <button class="button" tabindex="0" onclick="window.location = '{% url 'index' %}'">About</button>
 	    {% if user.is_authenticated %}
-	    <div class="logout">
-	        <div> {{ user.username }} </div>
-	        <div> <a class="link hey" href="{% url 'index' %}">Account</a> <a class="link hey" href="{% url 'logout' %}?next={{ request.get_full_path }}">Logout</a> </div>
+	    <div class="login">
+			<div class="second container">
+				{{ user.username }}
+			</div>
+			<div class="first container">
+				<a class="link hey" href="{% url 'index' %}">Account</a>
+				<a class="link hey" href="{% url 'logout' %}?next={{ request.get_full_path }}">Logout</a>
+			</div>
 	    </div>
 	    {% else %}
 	    <form method="post" action="{% url 'login' %}?next={{ request.get_full_path }}" class="login">
