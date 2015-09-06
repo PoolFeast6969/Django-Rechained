@@ -35,7 +35,8 @@ footer {
 
     font-family: 'Roboto', sans-serif;
 }
-header, nav {
+header,
+nav {
     position: relative;
     left: calc(-50vw + 50%);
 
@@ -58,7 +59,8 @@ header.title {
     font-family: 'Dancing Script', cursive;
     font-size: 600%;
 }
-.dummynav, nav {
+.dummynav,
+nav {
     height: 80px;
 }
 nav {
@@ -146,7 +148,8 @@ a {
     border-radius: 100%;
     background: rgba(0, 0, 0, .1);
 }
-.link:active, .arrow:active {
+.link:active,
+.arrow:active {
     -webkit-transform: scale(.8, .8);
 }
 .embedbutton {
@@ -165,7 +168,8 @@ a {
 
     font-size: 110%;
 }
-.embedbutton.current, .embedbutton:focus {
+.embedbutton.current,
+.embedbutton:focus {
     background: rgba(0, 0, 0, .2);
     box-shadow: 0 0 0 0 black, inset 0 0 9px 4px black;
 }
@@ -174,7 +178,8 @@ a {
 
     -webkit-transition: 0s 9999s;
 }
-.embedbutton.current span, .embedbutton:focus span {
+.embedbutton.current span,
+.embedbutton:focus span {
     -webkit-transform: scale(.85);
 }
 .content {
@@ -187,13 +192,16 @@ a {
     background: #6e6e6e;
     box-shadow: 0 0 15px 0 #000;
 }
-.content:nth-child(even), .card:nth-child(odd) {
+.content:nth-child(even),
+.card:nth-child(odd) {
     -webkit-animation: slideRight 1s ease-out forwards;
 }
-.content:nth-child(odd), .card:nth-child(even) {
+.content:nth-child(odd),
+.card:nth-child(even) {
     -webkit-animation: slideLeft 1s ease-out forwards;
 }
-.content .title, .content .subtitle {
+.content .title,
+.content .subtitle {
     padding: 6px;
 
     background: rgba(0, 0, 0, .1);
@@ -211,7 +219,9 @@ a {
 
     font-size: 25pt;
 }
-input[type='text'], input[type='password'], input[type='email'] {
+input[type='text'],
+input[type='password'],
+input[type='email'] {
     margin: 1px;
     padding-right: 5px;
     padding-left: 5px;
@@ -220,7 +230,8 @@ input[type='text'], input[type='password'], input[type='email'] {
     border-radius: 30px;
     box-shadow: 0 0 25px rgba(0, 0, 0, .2) inset;
 }
-input:invalid, input:out-of-range {
+input:invalid,
+input:out-of-range {
     box-shadow: 0 0 35px rgba(255, 0, 0, .5) inset;
 }
 input:focus {
@@ -233,9 +244,7 @@ input.tiny {
     overflow: hidden;
 
     height: 0;
-    padding: 0 5px
-
-    background: rgba(0, 0, 0, 0.1);
+    padding: 0 5px background: rgba(0, 0, 0, 0.1);
 
     font-size: 80%;
 
@@ -259,7 +268,8 @@ input.tiny {
 .row > *:not(.small) {
     margin: 5px;
 }
-.row:hover > .small, .row > input:focus + .small {
+.row:hover > .small,
+.row > input:focus + .small {
     height: 2em;
     padding: 5px 5px;
 }
@@ -286,7 +296,9 @@ input.tiny {
 
     -webkit-perspective: 750px;
 }
-.front, .back, .onesided {
+.front,
+.back,
+.onesided {
     border: 5px solid white;
     border-radius: 15px;
     background: #6e6e6e;
@@ -448,9 +460,9 @@ input.tiny {
 .notice .title {
     font-size: 40pt;
 }
-@media all and (max-width: 800px) {
+@media all and (max-width: 860px) {
     .fontscaling {
-        font-size: 10vw !important;
+        font-size: 11vw !important;
     }
 }
 @media all and (max-width: 750px) {
@@ -468,7 +480,8 @@ input.tiny {
         width: calc(50% - 20px);
     }
 }
-@media all and (pointer: none), and (pointer: fine) {
+@media all and (pointer: none),
+and (pointer: fine) {
     .cardwrapper:hover {
         -webkit-transform: translateZ(30px) rotateY(20deg);
     }
@@ -567,6 +580,21 @@ input.tiny {
 .i {
     font-style: italic;
 }
-.link, .title > span, .button, .content, .card, .front, .back, .onesided, .arrow, .cardwrapper, .embedbutton span, .embedbutton, .content input[type='text'], .content input[type='password'], .content input[type='email'], .small {
+.link,
+.title > span,
+.button,
+.content,
+.card,
+.front,
+.back,
+.onesided,
+.arrow,
+.cardwrapper,
+.embedbutton span,
+.embedbutton,
+.content input[type='text'],
+.content input[type='password'],
+.content input[type='email'],
+.small {
     -webkit-transition: .5s;
 }
