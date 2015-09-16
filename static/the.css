@@ -56,8 +56,10 @@ header span {
 header.title {
     white-space: nowrap;
 
-    font-family: 'Dancing Script', cursive;
-    font-size: 600%;
+    font-family: 'Lobster Two', cursive;
+    font-size: 800%;
+    padding-bottom: 2%;
+    text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
 }
 .dummynav,
 nav {
