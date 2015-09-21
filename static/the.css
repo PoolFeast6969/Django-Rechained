@@ -66,6 +66,8 @@ nav {
     height: 80px;
 }
 nav {
+    overflow-x: auto;
+
     margin-top: -80px;
 
     -webkit-transition: background .5s;
