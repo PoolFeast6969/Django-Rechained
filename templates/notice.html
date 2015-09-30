@@ -4,5 +4,8 @@
 <div class="notice">
 	<div class="fontscaling title">{{ message|default:'Error' }}</div>
     <p>{{ submessage|default:'Theres nothing here Boi' }}</p>
+	<div{% if message.tags %} class="message {{ message.tags }}"{% endif %}>
+	    {{ message }}
+	</div>
 </div>
 {% endblock %}
